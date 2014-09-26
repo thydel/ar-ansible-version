@@ -1,6 +1,7 @@
 # ansible-version
 
-Auto invoke eponymous module to get `ansible-version` available as an ansible fact
+- Auto invoke eponymous module to get `ansible-version` available as an ansible fact.
+- The galaxy role is name `version-ansible` because galaxy auto-remove `ansible` prefix.
 
 ## Requirements
 
