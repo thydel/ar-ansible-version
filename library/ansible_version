@@ -1,0 +1,37 @@
+#!/usr/bin/python
+# -*- Mode: python; mmm-classes: (embedded-yaml); -*-
+
+DOCUMENTATION = '''
+---
+module: ansible_version
+short_description: Set ansible_version fact
+description: Set ansible_version ansible_facts to ansible __version__
+options:
+notes: []
+requirements: [ ]
+author: Thierry Delamare
+...
+'''
+
+EXAMPLES = '''
+---
+- ansible-version:
+- fail: msg="ansible version >= 1.6 required"
+  when: ansible_version | version_compare('1.6', '<')
+...
+'''
+
+from ansible import __version__
+
+def main():
+    module = AnsibleModule(
+        argument_spec = dict(),
+        supports_check_mode=True
+    )
+
+    module.exit_json(changed=False, ansible_facts={ 'ansible_version': __version__ })
+
+# this is magic, see lib/ansible/module_common.py
+#<<INCLUDE_ANSIBLE_MODULE_COMMON>>
+
+main()

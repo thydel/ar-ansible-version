@@ -1,0 +1,10 @@
+---
+
+- hosts: localhost
+  gather_facts: False
+
+  roles:
+    - role: ansible-version
+
+  tasks:
+    - debug: msg={{ ansible_version }}
