@@ -4,7 +4,7 @@
   gather_facts: False
 
   roles:
-    - role: ansible-version
+    - role: ansible_version
 
   tasks:
     - debug: msg={{ ansible_version }}

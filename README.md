@@ -1,6 +1,6 @@
 # ansible-version
 
-- Auto invoke eponymous module to get `ansible-version` available as an ansible fact.
+- Embed eponymous module to get `ansible-version` available as an ansible fact.
 - The galaxy role is name `version-ansible` because galaxy auto-remove `ansible` prefix.
 
 ## Requirements
@@ -25,6 +25,7 @@ Use embedded eponymous module
     - role: ansible-version
 
   tasks:
+	- local_action: ansible_version
 	- set_fact: mode=0400
 	- when: ansible_version | version_compare('1.8', '>=')
 	  set_fact: mode=a-x
