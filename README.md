@@ -1,6 +1,8 @@
 # ansible-version
 
-- Embed eponymous module to get `ansible-version` available as an ansible fact.
+An ansible role to embed ansible_version module
+
+- Embed eponymous module to get `ansible_version` available as an ansible fact.
 - The galaxy role is name `version-ansible` because galaxy auto-remove `ansible` prefix.
 
 ## Requirements
