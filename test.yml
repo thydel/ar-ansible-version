@@ -7,4 +7,5 @@
     - role: ansible_version
 
   tasks:
+    - local_action: ansible_version
     - debug: msg={{ ansible_version }}
